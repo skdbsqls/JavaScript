@@ -7,15 +7,15 @@ class HttpError extends Error {
   }
 }
 
-// function loadJson(url) {
-//   return fetch(url).then((response) => {
-//     if (response.status == 200) {
-//       return response.json();
-//     } else {
-//       throw new HttpError(response);
-//     }
-//   });
-// }
+function loadJson(url) {
+  return fetch(url).then((response) => {
+    if (response.status == 200) {
+      return response.json();
+    } else {
+      throw new HttpError(response);
+    }
+  });
+}
 
 async function loadJson(url) {
   const response = await fetch(url);
